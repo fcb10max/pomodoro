@@ -111,7 +111,7 @@ const timerControlButtonClickHandler = (e) => {
       ).toFixed(4);
       circle.style.strokeDashoffset =
         circle.style.strokeDasharray * (1 - remainedTimePercent);
-    }, 1);
+    }, 1000);
   } else if (isTimerActive) {
     // pauses timer when clicked "pause" button
     isTimerActive = false;
