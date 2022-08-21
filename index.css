@@ -41,11 +41,13 @@ h1#title {
   font-size: 14px;
   padding: 10px 20px;
   font-family: inherit;
+  color: #d7e0ff;
 }
 .timer_types_block > input[type="radio"]:checked + label {
   background-color: var(--main-color);
   border-color: var(--main-color);
   border-radius: 26.5px;
+  color: #0e112a;
 }
 .timer {
   width: 100%;
