@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro timer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Roboto+Slab:wght@700&family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1 id="title">pomodoro</h1>
+
+    <div class="timer_types_block">
+      <input type="radio" name="timer_type" id="pomodoro" value="pomodoro" checked>
+      <label for="pomodoro">pomodoro</label>
+      <input type="radio" name="timer_type" id="short" value="short">
+      <label for="short">short break</label>
+      <input type="radio" name="timer_type" id="long" value="long">
+      <label for="long">long break</label>
+    </div>
+
+    <div class="timer_block">
+      <div class="outer_circle">
+        <div class="inner_circle">
+          <svg width="100%" height="100%" viewBox="0 0 100 100">
+            <circle id="svg_circle" />
+          </svg>
+        </div>
+        <div class="timer">
+          <h1 class="time">20:00</h1>
+          <button class="button_text">Start</button>
+        </div>
+      </div>
+    </div>
+
+    <i class="settings_icon">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g opacity="0.5">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M24.0378 15.365L26.9654 17.682C27.229 17.899 27.3054 18.2771 27.1318 18.578L24.3568 23.429C24.1834 23.73 23.8226 23.849 23.5104 23.73L20.0555 22.323C19.341 22.883 18.557 23.345 17.7106 23.702L17.1903 27.412C17.1348 27.741 16.8504 28 16.5035 28H10.9535C10.6066 28 10.3221 27.741 10.2666 27.412L9.74633 23.702C8.89997 23.345 8.11604 22.8761 7.40145 22.323L3.94654 23.73C3.63435 23.856 3.27364 23.73 3.10018 23.429L0.325132 18.578C0.151671 18.27 0.228028 17.892 0.491634 17.682L3.41927 15.365C3.36379 14.917 3.32216 14.462 3.32216 14C3.32216 13.538 3.36379 13.083 3.41927 12.635L0.491634 10.318C0.228028 10.101 0.151671 9.72302 0.325132 9.42199L3.10025 4.57099C3.27364 4.26996 3.63442 4.15098 3.94661 4.26996L7.40152 5.67697C8.11604 5.11699 8.90003 4.65499 9.74639 4.29799L10.2667 0.588001C10.3222 0.259022 10.6067 0 10.9535 0H16.5036C16.8504 0 17.1348 0.259022 17.1973 0.588001L17.7177 4.29799C18.564 4.65499 19.3479 5.12394 20.0625 5.67697L23.5174 4.26996C23.8296 4.14396 24.1903 4.26996 24.3638 4.57099L27.1389 9.42199C27.3123 9.72997 27.236 10.108 26.9724 10.318L24.0378 12.635C24.0932 13.083 24.1349 13.538 24.1349 14C24.1349 14.462 24.0932 14.917 24.0378 15.365ZM8.8722 14C8.8722 16.709 11.0437 18.9 13.7285 18.9C16.4134 18.9 18.5848 16.7091 18.5848 14.0001C18.5848 11.2911 16.4134 9.10004 13.7285 9.10004C11.0437 9.10004 8.8722 11.291 8.8722 14Z"
+            fill="#D7E0FF"
+          />
+        </g>
+      </svg>
+    </i>
+
+    <div class="settings_wrapper">
+      <div class="settings_block">
+
+        <div class="settings_block-top">
+          <h2>Settings</h2>
+          <i>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g opacity="0.5">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.364 2.0502L11.9497 0.635986L6.99999 5.58573L2.05025 0.635986L0.636032 2.0502L5.58578 6.99995L0.636032 11.9497L2.05025 13.3639L6.99999 8.41416L11.9497 13.3639L13.364 11.9497L8.41421 6.99995L13.364 2.0502Z"
+                  fill="#1E213F"
+                />
+              </g>
+            </svg>
+          </i>
+        </div>
+
+        <hr class="main">
+
+        <div class="timer_minuts_settings_block">
+          <h3>TIME (MINUTES)</h3>
+          <div>
+            <div class="timer_item">
+              <h4>pomodoro</h4>
+              <div class="time_input_block">
+                <input id="pomodoro_input" type="number" value="20">
+                <span>
+                  <i>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 6L7 2L13 6" stroke="#1E213F" stroke-opacity="0.25" stroke-width="2"/>
+                    </svg>
+                  </i>
+                  <i>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 5L13 1" stroke="#1E213F" stroke-opacity="0.25" stroke-width="2"/>
+                    </svg>
+                  </i>
+                </span>
+              </div>
+            </div>
+            <div class="timer_item">
+              <h4>short break</h4>
+              <div class="time_input_block">
+                <input id="short_timer_input" type="number" value="5">
+                <span>
+                  <i>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 6L7 2L13 6" stroke="#1E213F" stroke-opacity="0.25" stroke-width="2"/>
+                    </svg>
+                  </i>
+                  <i>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 5L13 1" stroke="#1E213F" stroke-opacity="0.25" stroke-width="2"/>
+                    </svg>
+                  </i>
+                </span>
+              </div>
+            </div>
+            <div class="timer_item">
+              <h4>long break</h4>
+              <div class="time_input_block">
+                <input id="long_timer_input" type="number" value="10">
+                <span>
+                  <i>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 6L7 2L13 6" stroke="#1E213F" stroke-opacity="0.25" stroke-width="2"/>
+                    </svg>
+                  </i>
+                  <i>
+                    <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 5L13 1" stroke="#1E213F" stroke-opacity="0.25" stroke-width="2"/>
+                    </svg>
+                  </i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <div class="font_settings">
+          <h3>FONT</h3>
+          <div class="fonts">
+            <input id="font1" type="radio" name="fonts" value="Kumbh Sans" checked >
+            <label for="font1">Aa</label>
+            <input id="font2" type="radio" name="fonts" value="Roboto Slab">
+            <label for="font2">Aa</label>
+            <input id="font3" type="radio" name="fonts" value="Space Mono">
+            <label for="font3">Aa</label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="color_settings">
+          <h3>COLOR</h3>
+          <div class="colors">
+            <input id="color1" type="radio" name="colors" value="#f87070/#f89090" checked >
+            <label for="color1">
+              <i>
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.5L4.95263 9.45263L13.4053 1" stroke="#161932" stroke-width="2"/>
+                  </svg>
+              </i>
+            </label>
+            <input id="color2" type="radio" name="colors" value="#70f3f8/#a3f4f5">
+            <label for="color2">
+              <i>
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.5L4.95263 9.45263L13.4053 1" stroke="#161932" stroke-width="2"/>
+                  </svg>
+                  
+              </i>
+            </label>
+            <input id="color3" type="radio" name="colors" value="#d881f8/#e0a7f4">
+            <label for="color3">
+              <i>
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.5L4.95263 9.45263L13.4053 1" stroke="#161932" stroke-width="2"/>
+                  </svg>
+                  
+              </i>
+            </label>
+          </div>
+        </div>
+
+      <button class="settings_apply_button">
+        Apply
+      </button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

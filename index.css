@@ -1,0 +1,402 @@
+html {
+  --main-color: #f87070;
+  --secondary-color: #f89090;
+}
+body {
+  font-family: "Kumbh Sans";
+  font-weight: bold;
+  background-color: #1e213f;
+}
+
+h1#title {
+  text-align: center;
+  color: #d7e0ff;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.timer_types_block {
+  max-width: 410px;
+  width: fit-content;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  background-color: #161932;
+  padding: 8px 7px;
+  border-radius: 31.5px;
+  z-index: 2;
+}
+.timer_types_block > input {
+  width: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+.timer_types_block > label {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  font-family: inherit;
+}
+.timer_types_block > input[type="radio"]:checked + label {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  border-radius: 26.5px;
+}
+.timer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1.time {
+  font-size: 100px;
+  color: #d7e0ff;
+  font-family: inherit;
+  margin: 0;
+  box-sizing: border-box;
+}
+button.button_text {
+  font-size: 16px;
+  color: #d7e0ff;
+  letter-spacing: 15px;
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+  font-family: inherit;
+}
+
+.timer_block {
+  max-width: 380px;
+  max-height: 380px;
+  width: 90vw;
+  height: 90vw;
+  margin: 30px auto;
+  text-align: center;
+}
+.outer_circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #0e112a, #2e325a);
+  box-shadow: -50px -50px 100px 0 #272c5a, 50px 50px 100px 0px #121530;
+}
+
+.inner_circle {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+}
+.inner_circle > svg > circle {
+  cx: 50%;
+  cy: 50%;
+  r: 48%;
+  stroke: var(--main-color);
+  stroke-width: 2.5%;
+  fill: transparent;
+  stroke-linecap: circle;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+i.settings_icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+i.settings_icon > svg > g {
+  transition: opacity 0.3s linear;
+}
+i.settings_icon > svg:hover > g {
+  opacity: 1;
+}
+
+.settings_wrapper {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+.settings_wrapper > .settings_block {
+  position: relative;
+  width: 540px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  align-items: center;
+}
+.settings_block > hr {
+  height: 1px;
+  width: 90%;
+  background-color: #e3e1e1;
+  border: none;
+}
+.settings_block > hr.main {
+  width: 100%;
+}
+
+.settings_wrapper.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.settings_block > .settings_block-top {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings_block > .settings_block-top > h2 {
+  font-size: 28px;
+  font-family: inherit;
+}
+.settings_block > .settings_block-top > i > svg > g {
+  transition: opacity 0.3s linear;
+}
+.settings_block > .settings_block-top > i:hover > svg > g {
+  opacity: 1;
+}
+
+.timer_minuts_settings_block {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.timer_minuts_settings_block > h3 {
+  font-size: 13px;
+  letter-spacing: 5px;
+  font-family: inherit;
+}
+.timer_minuts_settings_block > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.timer_minuts_settings_block > div > .timer_item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.timer_item > h4 {
+  font-size: 12px;
+  color: #1e213f;
+  font-family: inherit;
+}
+.timer_item > .time_input_block {
+  display: flex;
+  width: 100px;
+  background-color: #eff1fa;
+  border-radius: 10px;
+}
+.time_input_block > input {
+  flex: 3;
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  padding-left: 10px;
+  -moz-appearance: textfield;
+  font-size: 14px;
+  font-family: inherit;
+}
+.time_input_block > input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.time_input_block > span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 5px;
+}
+.time_input_block > span > i {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time_input_block > span > i path {
+  transition: stroke-opacity 0.3s linear;
+}
+.time_input_block > span > i:hover path {
+  stroke-opacity: 1;
+}
+
+.font_settings,
+.color_settings {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.font_settings > h3,
+.color_settings > h3 {
+  font-size: 13px;
+  letter-spacing: 5px;
+  font-family: inherit;
+}
+.font_settings > .fonts,
+.color_settings > .colors {
+  display: flex;
+}
+.font_settings > .fonts > input,
+.color_settings > .colors > input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.font_settings > .fonts > input[type="radio"] + label {
+  background-color: #eff1fa;
+  color: #1e213f;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+.font_settings > .fonts > input[type="radio"] + label:hover {
+  background-color: #d6d8de;
+}
+.font_settings > .fonts > label[for="font1"] {
+  font-family: "Kumbh Sans";
+}
+.font_settings > .fonts > label[for="font2"] {
+  font-family: "Roboto Slab";
+}
+.font_settings > .fonts > label[for="font3"] {
+  font-family: "Space Mono";
+}
+.font_settings > .fonts > input[type="radio"]:checked + label {
+  background-color: #161932;
+  color: #fff;
+}
+.color_settings > .colors > input[type="radio"] + label {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+.color_settings > .colors > label[for="color1"] {
+  background-color: #f87070;
+}
+.color_settings > .colors > label[for="color2"] {
+  background-color: #70f3f8;
+}
+.color_settings > .colors > label[for="color3"] {
+  background-color: #d881f8;
+}
+.color_settings
+  > .colors
+  > input[type="radio"]:not(:checked)
+  + label[for="color1"]:hover {
+  background-color: #f89090;
+}
+.color_settings
+  > .colors
+  > input[type="radio"]:not(:checked)
+  + label[for="color2"]:hover {
+  background-color: #a3f4f5;
+}
+.color_settings
+  > .colors
+  > input[type="radio"]:not(:checked)
+  + label[for="color3"]:hover {
+  background-color: #e0a7f4;
+}
+.color_settings > .colors > label > i {
+  display: none;
+}
+.color_settings > .colors > input[type="radio"]:checked + label > i {
+  display: block;
+}
+
+.settings_apply_button {
+  width: 140px;
+  height: 53px;
+  border-radius: 26.5px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: -26.5px;
+  font-size: 16px;
+  font-family: inherit;
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s linear;
+}
+.settings_apply_button:hover {
+  background-color: var(--secondary-color);
+}
+
+
+@media(max-width: 600px) {
+  .settings_wrapper > .settings_block {
+    width: 90vw;
+  }
+}
+@media(max-width: 410px) {
+  .timer_types_block > label {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .timer > h1.time {
+    font-size: 70px;
+  }
+  .settings_wrapper > .settings_block {
+    height: 570px;
+  }
+  .timer_minuts_settings_block {
+    align-items: center;
+    margin: 0;
+  }
+  .timer_minuts_settings_block > div {
+    flex-direction: column;
+    align-items: center;
+  }
+  .timer_minuts_settings_block > div > .timer_item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  .settings_apply_button {
+    width: 100px;
+    height: 35px;
+    font-size: 13;
+    bottom: -17.5px;
+  }
+}
