@@ -1,4 +1,4 @@
 # pomodoro
 
 deployment location:
-(https://vercel.com/fcb10max/pomodoro)
+https://pomodoro-self-omega.vercel.app/
